@@ -12,7 +12,9 @@ import Faker from 'faker';
 export default DS.Model.extend({
 
   name: DS.attr('string'),
-  books: DS.hasMany('book', {inverse: 'author', async: true}),
+  books: DS.hasMany('book', {inverse: 'author'}),
+
+  book: DS.belongsTo('book', {inverse: 'author', async: true}),
 
   isNotValid: Ember.computed.empty('name'),
 
