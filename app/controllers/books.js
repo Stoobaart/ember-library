@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
       if (param !== '') {
       	return this.store.query('book', {orderBy: 'title', startAt: capParam });
       } else {
-        return this.store.findAll('book');
+        return this.store.query('book', {orderBy: 'title'});
       }
 	  }
   }

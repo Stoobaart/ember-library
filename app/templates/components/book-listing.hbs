@@ -7,6 +7,7 @@
     </th>
     <th class="vtop">Author</th>
     <th class="vtop">Release Year</th>
+    <th class="vtop">Available At</th>
   </tr>
   </thead>
 	<tbody>
@@ -33,6 +34,10 @@
 	    </td>
 	    <td>
 	      <div>{{moment-format book.releaseYear 'YYYY'}}</div>
+	    </td>
+	    <td>
+	    	<div>{{#link-to 'libraries.library-info' book.library.id }}{{book.library.name}}{{/link-to}}</div>
+
 	    </td>
 
 
