@@ -7,13 +7,11 @@ export default Ember.Route.extend({
   }, 
 
   actions: {
-  	deleteInvitation(invitation) {
-  		let confirmation = confirm('Are you sure?')
-
-  		if (confirmation) {
-  			invitation.destroyRecord();
-  		}
-  	}
+    deleteInvitation(invitation) {
+      let confirmation = confirm('Are you sure?')
+      if (confirmation) {
+        invitation.destroyRecord();
+      }
+    }
   }
-  
 });

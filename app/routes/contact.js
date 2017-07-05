@@ -7,11 +7,9 @@ export default Ember.Route.extend({
 	},
 
 	actions: {
-
-  	saveMessage(newContact) {
-  		newContact.save().then(() => this.transitionTo('/'));
-  	},
-
+    saveMessage(newContact) {
+      newContact.save().then(() => this.transitionTo('/'));
+    },
     willTransition() {
       this.controller.get('model').rollbackAttributes();
     }

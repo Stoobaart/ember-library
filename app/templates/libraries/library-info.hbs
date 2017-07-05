@@ -1,3 +1,4 @@
 <h2>Library name: {{model.name}}</h2>
 <p>Address: {{model.address}}</p>
 <p>Tel: {{model.phone}}</p>
+<div class="ember-cli-g-map">{{#g-map name="my-map" lat=model.lat lng=model.lng zoom=15 as |context|}}{{g-map-marker context lat=model.lat lng=model.lng}}{{/g-map}}</div>

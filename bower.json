@@ -1,6 +1,7 @@
 {
   "name": "library-app",
   "dependencies": {
-    "Faker": "^4.1.0"
+    "Faker": "^4.1.0",
+    "gmaps-for-apps": "^0.5.15"
   }
 }

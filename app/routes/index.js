@@ -7,14 +7,11 @@ export default Ember.Route.extend({
   },
 
   actions: {
-
     saveInvitation(newInvitation) {
       let model = this.controller.get('model');
-
       if(model.get('hasDirtyAttributes')) {
-        let confirmation = confirm('Your Invitation has been requested');
+        alert('Your Invitation has been requested');
       }
-
       newInvitation.save().then(() => this.transitionTo('libraries'));
     },
 

@@ -5,10 +5,10 @@ export default Ember.Controller.extend({
 		filterByTitle(param) {
 			let capParam = param.toUpperCase();
       if (param !== '') {
-      	return this.store.query('book', {orderBy: 'title', startAt: capParam });
+        return this.store.query('book', {orderBy: 'title', startAt: capParam });
       } else {
         return this.store.query('book', {orderBy: 'title'});
       }
-	  }
+    }
   }
 });
