@@ -7,13 +7,44 @@ body {
 html {
   overflow-y: scroll;
 }
-.container {
-  animation: fadeIn 0.5s linear;
-  padding-left: 0rem;
+
+.navbar {
+  z-index: 1;
 }
 
 .nav-btn {
   margin-top: 1rem;
+}
+
+.open > .dropdown-menu {
+  display: inline-flex;
+  padding: 4px;
+  background-color: #222222;
+}
+
+.home-msg {
+  text-align: center;
+  background-color: #eeeeee;
+  padding: 4rem;
+  margin-top: 0rem;
+}
+
+.vid {
+  opacity: 0.7;
+}
+
+.container {
+  animation: fadeIn 0.5s linear;
+  padding-left: 0rem;
+  margin-top: -2.5rem;
+}
+
+.align-jumbotron {
+    margin-top: 22rem;
+}
+
+.individualLibraryViewText {
+  font-size: 2.5rem;
 }
 
 .library-item {
@@ -69,10 +100,10 @@ html {
   border-radius: 5px;
 }
 .welcomeMsg {
-  position: absolute;
-  margin-top: -2rem;
+  position: relative;
+  margin-top: -28rem;
   font-size: 5rem;
-  color: #2e3031;
+  color: white;
   font-weight: bold;
   animation: fadeIn 2s linear;
   padding-left: 2.5rem;

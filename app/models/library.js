@@ -8,6 +8,7 @@ export default DS.Model.extend({
   phone: DS.attr('string'),
   lat: DS.attr('number'),
   lng: DS.attr('number'),
+  website: DS.attr('string'),
 
   books: DS.hasMany('book'),
 
