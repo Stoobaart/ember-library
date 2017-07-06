@@ -7,6 +7,10 @@ body {
 html {
   overflow-y: scroll;
 }
+.container {
+  animation: fadeIn 0.5s linear;
+  padding-left: 0rem;
+}
 
 .nav-btn {
   margin-top: 1rem;
@@ -45,6 +49,7 @@ html {
 
 .g-map{
   height: 100%;
+  width: 100%;
 }
 .g-map-canvas {
   width: 100%;
@@ -53,6 +58,28 @@ html {
 
 .ember-cli-g-map {
     height: 300px;
+}
+
+.searchBoxStyling {
+  width: 35%;
+}
+
+.homeImage {
+  margin-top: -1rem;
+  border-radius: 5px;
+}
+.welcomeMsg {
+  position: absolute;
+  margin-top: -2rem;
+  font-size: 5rem;
+  color: #2e3031;
+  font-weight: bold;
+  animation: fadeIn 2s linear;
+  padding-left: 2.5rem;
+}
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
 }
 
 @keyframes spin {

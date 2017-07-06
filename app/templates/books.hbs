@@ -1,9 +1,11 @@
-<h1>Books</h1>
+<div class='container'>
+	<h1>Books</h1>
 
-{{#list-filter
-   filter=(action 'filterByTitle')
-   as |book|}}
-  {{book-listing model=book}}
+	{{#list-filter
+	   filter=(action 'filterByTitle')
+	   as |book|}}
+	  {{book-listing model=book}}
 
-{{/list-filter}}
-{{outlet}}
+	{{/list-filter}}
+	{{outlet}}
+</div>

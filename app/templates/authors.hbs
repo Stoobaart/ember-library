@@ -1,9 +1,11 @@
-<h1>Authors</h1>
+<div class='container'>
+	<h1>Authors</h1>
 
-{{#list-filter
-   filter=(action 'filterByAuthor')
-   as |author|}}
-  {{author-listing model=author}}
+	{{#list-filter
+	   filter=(action 'filterByAuthor')
+	   as |author|}}
+	  {{author-listing model=author}}
 
-{{/list-filter}}
-{{outlet}}
+	{{/list-filter}}
+	{{outlet}}
+</div>
