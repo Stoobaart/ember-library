@@ -1,0 +1,35 @@
+<div class="container viewerCanvas">
+	<div class="bookSearchField">
+		{{input class="bookSearch" placeholder="Book Search" value=searchValue}}
+		<button {{action 'viewBooks'}}>Search</button>
+		{{#if isReading}}
+			<button {{action 'showBooks'}}>Show Found Books</button>
+		{{else}}
+			<button {{action 'hideBooks'}}>Hide Found Books</button>
+		{{/if}}
+	</div>
+
+	{{#if isReading}}
+	{{else}}
+	<div class="row customList">
+		{{#each books as |book|}}
+			{{#each book as |oneBook| }}
+			<div class="col-xs-4 col-sm-4 col-md-5 searchedBookList">
+
+			{{#if oneBook.volumeInfo.imageLinks.thumbnail}}
+				<img class="bookImage" src={{oneBook.volumeInfo.imageLinks.thumbnail}} alt="/assets/images/image-unavailable.jpg" width='100%'>
+			{{else}}
+				<img class="bookImage" src="/assets/images/image-unavailable.jpg" width='100%'>
+			{{/if}}
+				<br>
+				<span>{{oneBook.volumeInfo.title}}</span>
+				{{#if oneBook.accessInfo.embeddable}}
+				<button {{action "readBook" oneBook.volumeInfo.industryIdentifiers.[0].identifier}}>Read This Book</button>
+				{{/if}}
+			</div>
+			{{/each}}
+		{{/each}}
+	</div>
+	{{/if}}
+	<div id="viewerCanvas"></div>
+</div>

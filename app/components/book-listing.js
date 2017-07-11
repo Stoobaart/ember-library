@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+
 	actions: {
 		editBook(book) {
 			book.set('isEditing', true);

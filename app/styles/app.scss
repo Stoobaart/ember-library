@@ -1,5 +1,5 @@
 @import 'bootstrap';
-
+// APP STYLES
 body {
   padding-top: 20px;
 }
@@ -7,7 +7,7 @@ body {
 html {
   overflow-y: scroll;
 }
-
+// NAVBAR STYLES
 .navbar {
   z-index: 1;
 }
@@ -22,6 +22,20 @@ html {
   background-color: #222222;
 }
 
+// HOMEPAGE STYLES
+.homeImage {
+  margin-top: -1rem;
+  border-radius: 5px;
+}
+.welcomeMsg {
+  position: relative;
+  margin-top: -28rem;
+  font-size: 5rem;
+  color: white;
+  font-weight: bold;
+  animation: fadeIn 2s linear;
+  padding-left: 2.5rem;
+}
 .home-msg {
   text-align: center;
   background-color: #eeeeee;
@@ -43,6 +57,7 @@ html {
     margin-top: 22rem;
 }
 
+// LIBRARY VIEW PAGE STYLES
 .individualLibraryViewText {
   font-size: 2.5rem;
 }
@@ -64,7 +79,7 @@ html {
   padding-bottom: 20px;
 }
 
-// Spinner in a button
+// SPINNER AT BOTTOM
 .glyphicon.spinning {
   animation: spin 1s infinite linear;
   -webkit-animation: spin2 1s infinite linear;
@@ -78,6 +93,7 @@ html {
   font-weight: normal!important;
 }
 
+// G-MAPS STYLES
 .g-map{
   height: 100%;
   width: 100%;
@@ -95,19 +111,28 @@ html {
   width: 35%;
 }
 
-.homeImage {
-  margin-top: -1rem;
-  border-radius: 5px;
+// FREE BOOK READING PAGE STYLES
+div#viewerCanvas {
+  margin: auto;
+  width: 90%;
+  height: 500px;
+  margin-top: 0rem;
 }
-.welcomeMsg {
-  position: relative;
-  margin-top: -28rem;
-  font-size: 5rem;
-  color: white;
-  font-weight: bold;
-  animation: fadeIn 2s linear;
-  padding-left: 2.5rem;
+div.container.viewerCanvas {
+  margin-top: 2rem;
+} 
+div.row.customList {
+  margin-top: 2rem;
 }
+.searchedBookList {
+  width: 19.5rem;
+  height: 35rem;
+}
+.bookSearchField {
+  margin-top: 2rem;
+}
+
+// ANIMATIONS
 @keyframes fadeIn {
   from {opacity: 0}
   to {opacity: 1}
