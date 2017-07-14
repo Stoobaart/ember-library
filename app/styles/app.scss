@@ -74,6 +74,13 @@ html {
     opacity: 1;
   }
 }
+// LIBRARY PANELS
+div.panel-heading {
+  min-height: 5rem;
+}
+div.panel-body {
+  min-height: 13rem;
+}
 
 .extra-padding-bottom {
   padding-bottom: 20px;
@@ -131,6 +138,13 @@ div.row.customList {
 .bookSearchField {
   margin-top: 2rem;
 }
+img.bookImage {
+  height: 20rem;
+}
+.bookSearchBtns {
+  padding: 0.2rem;
+  margin-top: -0.1rem;
+}
 
 // ANIMATIONS
 @keyframes fadeIn {
@@ -147,3 +161,27 @@ div.row.customList {
   from { -webkit-transform: rotate(0deg); }
   to { -webkit-transform: rotate(360deg); }
 }
+@media (min-width: 992px) {
+  .col-md-4 {
+      width: 33.33333%;
+      height: 24rem;
+  }
+}
+// @media (min-width: 1200px) {
+//   .container {
+//       width: 1169px;
+//   }
+// }
+// @media (min-width: 992px) {
+//   .container {
+//       width: 969px;
+//   }
+// }
+//   @media (min-width: 768px) {
+//   .container {
+//       width: 749px;
+//   }
+// }
+
+
+

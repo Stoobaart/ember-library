@@ -17,15 +17,15 @@
 	      {{#if book.isEditing}}
 	        <form {{action 'saveBook' book on='submit'}} class="form-inline">
 	          <div class="input-group">
-	            {{input value=book.title class="form-control"}}
+	            {{input value=book.title class="form-control titleField"}}
 	            <div class="input-group-btn">
-	              <button type="submit" class="btn btn-success" disabled={{book.isNotValid}}>Save</button>
+	              <button type="submit" class="btn btn-success saveButton" disabled={{book.isNotValid}}>Save</button>
 	              <button class="btn btn-danger" {{action 'cancelBookEdit' book}}>Cancel</button>
 	            </div>
 	          </div>
 	        </form>
 	      {{else}}
-	        <span {{action 'editBook' book}}>{{book.title}}</span>
+	        <span class="title" {{action 'editBook' book}}>{{book.title}}</span>
 	      {{/if}}
 	    </td>
 

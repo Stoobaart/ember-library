@@ -1,25 +1,54 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import Ember from 'ember';
+import sinon from 'sinon';
 
 moduleForComponent('author-listing', 'Integration | Component | author listing', {
   integration: true
 });
 
-test('it renders', function(assert) {
+test('it should show a list of authors', function(assert) {
+  this.set('author', Ember.A([
+    Ember.Object.create({
+      name: 'Luke'
+    })
+  ]));
+  this.render(hbs`{{author-listing model=author}}`);
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  assert.equal(this.$('.name').text().trim(), 'Luke');
 
-  this.render(hbs`{{author-listing}}`);
+});
+test('when editing an author name, you should see a save button appear', function(assert) {
+  this.set('author', Ember.A([
+    Ember.Object.create({
+      name: 'Luke'
+    })
+  ]));
+  this.render(hbs`{{author-listing model=author}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  this.$('.name').click();
 
-  // Template block usage:
-  this.render(hbs`
-    {{#author-listing}}
-      template block text
-    {{/author-listing}}
-  `);
+  assert.equal(this.$('.saveButton').text().trim(), 'Save');
+});
 
-  assert.equal(this.$().text().trim(), 'template block text');
+test('when clicking on the save button the edited author name should save', function(assert) {
+  const save = sinon.stub();
+  this.set('author', Ember.A([
+    Ember.Object.create({
+      name: 'Luke',
+      save,
+    })
+  ]));
+  this.render(hbs`{{author-listing model=author}}`);
+
+  this.$('.name').click();
+
+  this.$('.nameField').val('Mike');
+  this.$('.nameField').change();
+
+  this.$('.saveButton').click();
+
+  assert.equal(this.$('.name').text().trim(), 'Mike');
+  sinon.assert.calledOnce(save);
+
 });

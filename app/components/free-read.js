@@ -31,26 +31,27 @@ export default Ember.Component.extend({
 	},
 
 	actions: {
-		showBooks(element) {
+		showBooks() {
 			this.set('isReading', false);
 		},
-		hideBooks(element) {
+		hideBooks() {
 			this.set('isReading', true);
 		},
 		readBook(thisBook) {
 			this.set('isReading', true);
-    	var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));viewer.load('ISBN:' + thisBook);
+			var viewer = new google.books.DefaultViewer(document.getElementById('viewerCanvas'));
+			viewer.load('ISBN:' + thisBook);
 		},
 
 		viewBooks() {
 			this.set('isReading', false);
 			var books = this.get('books');
-			var title = $('.bookSearch').val();
+			var searchBox = document.getElementsByClassName('bookSearch')
+			var title = searchBox[0].value;
 
-			$.getJSON('https://www.googleapis.com/books/v1/volumes?q=title:' + title + '&maxResults=10', function(data) {
+			$.getJSON('https://www.googleapis.com/books/v1/volumes?q=title:' + title + '&maxResults=12', function(data) {
 					books.pop();
 					books.pushObject(data.items);
-					console.log(books)
 			});
 		}
 	}

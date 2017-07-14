@@ -1,25 +1,19 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+// import Ember from 'ember';
 
 moduleForComponent('free-read', 'Integration | Component | free read', {
   integration: true
 });
 
-test('it renders', function(assert) {
-
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
+test('page renders with a search box', function(assert) {
   this.render(hbs`{{free-read}}`);
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#free-read}}
-      template block text
-    {{/free-read}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$('.bookSearch').text().trim(), '');
 });
+
+// test('10 books are found when a user clickd on the search button', function(assert) {
+//   this.render(hbs`{{free-read}}`);
+
+//   this.$('.')
+// });

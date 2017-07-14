@@ -16,7 +16,10 @@
       </div>
 
       <div class="col-xs-10 col-xs-offset-1 col-sm-offset-1 col-sm-4 col-md-offset-2 col-md-3">
-          <button class="btn btn-primary btn-lg btn-block" disabled={{isDisabled}} {{action 'saveMessage' model}}>Send message</button>
+        {{#if model.isDisabled}}
+        {{else}}
+          <button class="btn btn-primary btn-lg btn-block" {{action 'saveMessage' model}}>Send message</button>
+        {{/if}}
       </div>
     </div>
 

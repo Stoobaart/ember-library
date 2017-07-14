@@ -1,11 +1,12 @@
 <div class="container viewerCanvas">
+	<h3>Welcome to Free Read, our brand new feature which allows you to search for and read the books you love. For free, here on our site! Enjoy</h3>
 	<div class="bookSearchField">
 		{{input class="bookSearch" placeholder="Book Search" value=searchValue}}
-		<button {{action 'viewBooks'}}>Search</button>
+		<button class="nav-btn btn btn-primary bookSearchBtns" {{action 'viewBooks'}}>Search</button>
 		{{#if isReading}}
-			<button {{action 'showBooks'}}>Show Found Books</button>
+			<button class="nav-btn btn btn-primary bookSearchBtns" {{action 'showBooks'}}>Show Found Books</button>
 		{{else}}
-			<button {{action 'hideBooks'}}>Hide Found Books</button>
+			<button class="nav-btn btn btn-primary bookSearchBtns" {{action 'hideBooks'}}>Hide Found Books</button>
 		{{/if}}
 	</div>
 
@@ -24,7 +25,7 @@
 				<br>
 				<span>{{oneBook.volumeInfo.title}}</span>
 				{{#if oneBook.accessInfo.embeddable}}
-				<button {{action "readBook" oneBook.volumeInfo.industryIdentifiers.[0].identifier}}>Read This Book</button>
+				<button class="nav-btn btn btn-primary" {{action "readBook" oneBook.volumeInfo.industryIdentifiers.[0].identifier}}>Read This Book</button>
 				{{/if}}
 			</div>
 			{{/each}}
